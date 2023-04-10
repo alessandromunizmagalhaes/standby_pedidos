@@ -177,11 +177,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ProdutosController.cs" />
     <Compile Include="Controllers\Api\ClientesController.cs" />
+    <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DTOs\ClientesDTO.cs" />
+    <Compile Include="DTOs\ProdutosDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,6 +199,14 @@
     <Compile Include="Migrations\202304082241011_applyAnnotationsToClientesName.cs" />
     <Compile Include="Migrations\202304082241011_applyAnnotationsToClientesName.Designer.cs">
       <DependentUpon>202304082241011_applyAnnotationsToClientesName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304100200405_preencherUsuarioAdmin.cs" />
+    <Compile Include="Migrations\202304100200405_preencherUsuarioAdmin.Designer.cs">
+      <DependentUpon>202304100200405_preencherUsuarioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304101211285_camposObrigatoriosEmProdutos.cs" />
+    <Compile Include="Migrations\202304101211285_camposObrigatoriosEmProdutos.Designer.cs">
+      <DependentUpon>202304101211285_camposObrigatoriosEmProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -502,8 +513,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\Clientes\Detalhes.cshtml" />
     <Content Include="Views\Clientes\ClientesForm.cshtml" />
+    <Content Include="Views\Produtos\ProdutosForm.cshtml" />
+    <Content Include="Views\Produtos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -525,6 +537,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304082241011_applyAnnotationsToClientesName.resx">
       <DependentUpon>202304082241011_applyAnnotationsToClientesName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304100200405_preencherUsuarioAdmin.resx">
+      <DependentUpon>202304100200405_preencherUsuarioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304101211285_camposObrigatoriosEmProdutos.resx">
+      <DependentUpon>202304101211285_camposObrigatoriosEmProdutos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -130,3 +130,5 @@ C:\Desenvolvimento\standby_pedidos\StandBy\bin\AutoMapper.xml
 C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Net.Http.Formatting.xml
 C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Web.Http.xml
 C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Web.Http.WebHost.xml
+C:\Desenvolvimento\standby_pedidos\StandBy\obj\Debug\StandBy.Migrations.preencherUsuarioAdmin.resources
+C:\Desenvolvimento\standby_pedidos\StandBy\obj\Debug\StandBy.Migrations.camposObrigatoriosEmProdutos.resources
