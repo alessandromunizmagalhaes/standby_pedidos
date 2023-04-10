@@ -14,11 +14,12 @@
 }
 else
 {
-    <table class="table table-bordered table-hover">
+    <table class="table table-bordered table-hover" id="clientes">
         <thead>
             <tr>
                 <th>Cliente</th>
                 <th>CPF / CNPJ</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +28,32 @@ else
                 <tr>
                     <td>@Html.ActionLink(cliente.Nome, "Edit", "Clientes", new { id = cliente.Id }, null)</td>
                     <td>@cliente.CpfCnpj</td>
+                    <td><button class="btn-link js-delete" data-cliente-id="@cliente.Id">Excluir</button></td>
                 </tr>
             }
         </tbody>
     </table>
+}
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#clientes").DataTable();
+
+            $("#clientes").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Deseja realmente excluir?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "api/clientes/" + button.attr("data-cliente-id"),
+                            method: "DELETE",
+                            success: function () {
+                                button.parent().parent().remove();
+                            }
+                        });
+                    }
+                });
+            });
+        })
+    </script>    
 }

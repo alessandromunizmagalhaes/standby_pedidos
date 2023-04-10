@@ -122,3 +122,11 @@ C:\Desenvolvimento\old_standby_pedidos\StandBy\obj\Debug\StandBy.Migrations.appl
 C:\Desenvolvimento\old_standby_pedidos\StandBy\obj\Debug\StandBy.csproj.GenerateResource.Cache
 C:\Desenvolvimento\old_standby_pedidos\StandBy\obj\Debug\StandBy.dll
 C:\Desenvolvimento\old_standby_pedidos\StandBy\obj\Debug\StandBy.pdb
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\AutoMapper.dll
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Net.Http.Formatting.dll
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Web.Http.dll
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Web.Http.WebHost.dll
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\AutoMapper.xml
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Net.Http.Formatting.xml
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Web.Http.xml
+C:\Desenvolvimento\standby_pedidos\StandBy\bin\System.Web.Http.WebHost.xml

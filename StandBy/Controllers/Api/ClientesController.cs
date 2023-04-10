@@ -1,4 +1,6 @@
-﻿using StandBy.Models;
+﻿using AutoMapper;
+using StandBy.DTOs;
+using StandBy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,35 +15,39 @@ namespace StandBy.Controllers.Api
         private ApplicationDbContext _context;
 
         //GET /api/clientes
-        public IEnumerable<Clientes> GetClientes() {
-            return _context.Clientes.ToList();
+        public IEnumerable<ClientesDTO> GetClientes() {
+            return _context.Clientes.ToList().Select(Mapper.Map<Clientes, ClientesDTO>);
         }
 
         //GET /api/clientes/1
-        public Clientes getCliente(int id) {
+        public IHttpActionResult getCliente(int id) {
             var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
 
-            if(cliente == null) 
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (cliente == null)
+                NotFound();
 
-            return cliente;
+            return Ok(Mapper.Map<Clientes, ClientesDTO>(cliente));
         }
 
         //POST /api/clientes
         [HttpPost]
-        public Clientes postCliente(Clientes cliente)
+        public IHttpActionResult postCliente(ClientesDTO clienteDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
+
+            var cliente = Mapper.Map<ClientesDTO, Clientes>(clienteDto);
 
             _context.Clientes.Add(cliente);
             _context.SaveChanges();
 
-            return cliente;
+            clienteDto.Id = cliente.Id;
+
+            return Created(new Uri(Request.RequestUri + "/" + cliente.Id), clienteDto);
         }
 
         //PUT /api/clientes/1
-        public void updateCliente(int id, Clientes cliente) {
+        public void updateCliente(int id, ClientesDTO clienteDto) {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
@@ -49,10 +55,7 @@ namespace StandBy.Controllers.Api
             if (clienteInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            //
-            //use auto mapper
-            //
-            //
+            Mapper.Map(clienteDto, clienteInDb); 
 
             _context.SaveChanges();
         }
